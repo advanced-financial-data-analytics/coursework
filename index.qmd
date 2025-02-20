@@ -1,5 +1,5 @@
 ---
-title: "Financial Time Series Analysis"
+title: "Advanced Financial Data Analytics"
 subtitle: "Coursework Assessment 2024/25"
 format:
   html:
@@ -7,6 +7,13 @@ format:
     number-sections: true
     highlight-style: github
     code-fold: true
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - margin=1in
+    fontsize: 11pt
 ---
 
 # Module Information
