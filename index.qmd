@@ -5,11 +5,13 @@ embed-resources: true
 format:
   html:
     toc: true
+    toc-depth: 1
     number-sections: true
     highlight-style: github
     code-fold: true
   pdf:
     toc: true
+    toc-depth: 1
     number-sections: true
     colorlinks: true
     geometry:
@@ -26,6 +28,23 @@ By completing this project, you will be able to:
 - Build statistical models to forecast future values
 - Explain what the analysis tells us about the data and what it means in practice
 - Communicate your research findings in a written report
+- Effectively present complex analytical findings through concise verbal and visual communication
+- Develop communication skills that differentiate human expertise from AI-generated content
+- Practice professional presentation methods essential for careers in financial analytics
+
+## Communication Skills in the Age of AI
+
+In today's professional environment, the ability to effectively communicate complex financial findings is as valuable as the technical analysis itself. With AI increasingly able to generate basic reports and analyses, human professionals must demonstrate skills that go beyond what artificial intelligence can produce:
+
+1. **Contextualized interpretation**: While AI can generate analyses, human experts provide critical context, insight, and judgment that connects findings to real-world implications.
+
+2. **Compelling storytelling**: The 5-minute presentation component challenges you to distill complex information into a compelling narrative—a distinctly human skill that AI struggles to replicate authentically.
+
+3. **Balanced judgment**: AI can present data but lacks the nuanced judgment to determine which findings merit emphasis for specific audiences or business decisions.
+
+4. **Trust and credibility**: Financial stakeholders need to trust both the analysis and the analyst. Your presentation skills build the foundation for establishing professional credibility in ways AI cannot.
+
+The 20% allocation to the video presentation reflects the growing importance of these communication abilities in financial analytics careers. As AI tools become more prevalent for generating basic analyses, employers increasingly value professionals who can effectively interpret, contextualize, and communicate findings in accessible ways.
 
 # Project Requirements
 
@@ -39,11 +58,24 @@ This assessment requires you to submit your work as a Quarto document (`.qmd` fi
 - Show or hide code as needed
 
 Your Quarto document should include:
+
 - All your analysis code in clearly labeled code chunks
 - Your written report with integrated figures and tables
 - References and citations
 
-You do not need to submit separate R scripts if all your code is included in the Quarto document. The code chunks in your document should be well-organized and commented.
+**You do not need to submit separate R scripts if all your code is included in the Quarto document.** The code chunks in your document should be well-organized and commented.
+
+## Posit Cloud Requirement
+
+This project must be completed on Posit Cloud (formerly RStudio Cloud), similar to all the tutorials and workshops in this course. You will have access to:
+
+- A Quarto template for the project
+- A pre-configured environment with all the relevant packages already installed
+- The datasets from the `tsfe` package
+
+Using Posit Cloud ensures consistency in your computing environment and makes it easier for you to focus on the analysis rather than setting up the technical infrastructure. It also ensures that your project will be reproducible when evaluated.
+
+Instructions for accessing the project template and environment will be provided separately.
 
 ## Glossary of Key Terms
 
@@ -61,7 +93,7 @@ To help you understand the technical language, here's a glossary of key terms:
 
 ## Data Sources
 
-The `tsfe` R package provides several datasets (daily frequency from 2010-2024) that you can choose from:
+The `tsfe` R package provides several financial datasets that you can choose from:
 
 1.  **Market Indices:**
     -   Russell 2000 Price Index: Measures the performance of small-cap US companies.
@@ -78,6 +110,13 @@ The `tsfe` R package provides several datasets (daily frequency from 2010-2024) 
 ## Research Questions and Report Structure
 
 Your report should investigate three related research questions (one from each section below) that form a coherent analysis. For example, you might examine market volatility through increasingly sophisticated lenses: first exploring its basic properties, then modeling it, and finally conducting advanced analysis.
+
+### Example of Connected Research Questions:
+- **Section 1:** "How has the volatility of the USD/GBP exchange rate changed over time?" (Exploratory Analysis)
+- **Section 2:** "What's the best GARCH model for figuring out how volatile the market is?" (Time Series Modeling applied to the same exchange rate)
+- **Section 3:** "Can machine learning predict financial markets better than traditional methods?" (Comparing ML predictions of exchange rate volatility against your GARCH model)
+
+This progression builds a comprehensive analysis: first understanding what volatility looks like, then modeling it with traditional methods, and finally assessing if advanced techniques offer improvements.
 
 ### Section 1: Exploratory Analysis (24 marks - approximately 750 words)
 
@@ -170,7 +209,9 @@ Your report should be structured as follows, integrating your three chosen resea
    - Section 1 findings (12 marks)
    - Section 2 findings (16 marks)
    - Section 3 findings (12 marks)
+
    Each section should include:
+   
    - Clear presentation of results with appropriate visualizations
    - Statistical interpretation
    - Model diagnostics where applicable
@@ -188,141 +229,31 @@ Your report should be structured as follows, integrating your three chosen resea
 
 Total word limit: 3000 words (excluding code, figures, tables, and references)
 
-## Video Presentation (20% of total mark)
+## Project Workflow
 
-Create a 5-minute video that:
+To help organize your work on this project, consider following this workflow:
 
-1. **Introduction (1 minute):**
-   - Overview of your research questions
-   - Why they're connected/important
+1. **Data Selection & Exploration**
+   - Choose a dataset aligned with your research interests
+   - Perform initial exploration to understand its characteristics
+   - Formulate your three connected research questions
 
-2. **Methods & Results (3 minutes):**
-   - Key findings from each section
-   - How the analyses build on each other
+2. **Analysis Implementation**
+   - Conduct exploratory analysis (Section 1)
+   - Develop time series models (Section 2)
+   - Perform advanced analysis (Section 3)
 
-3. **Conclusions (1 minute):**
-   - Main takeaways
-   - Practical implications
+3. **Integration & Interpretation**
+   - Connect findings across all three analyses
+   - Draw overarching conclusions
+   - Identify practical implications
 
-Technical Requirements:
-- MP4 format
-- Clear audio
-- Screen sharing of key visualizations
-- Optional: webcam footage of presenter
+4. **Report Preparation**
+   - Draft your written report with integrated visuals
+   - Prepare your video presentation
+   - Review and refine both deliverables
 
-[Previous technical requirements section with R version updated to 4.3.0]
-
----
-title: "Advanced Financial Data Analytics"
-subtitle: "Coursework Assessment 2024/25"
-format:
-  html:
-    toc: true
-    number-sections: true
-    highlight-style: github
-    code-fold: true
-  pdf:
-    toc: true
-    number-sections: true
-    colorlinks: true
-    geometry:
-      - margin=1in
-    fontsize: 11pt
----
-
-## Learning Outcomes
-
-By completing this project, you will be able to:
-
-- Understand the basic characteristics of financial time series data (like trends, patterns, and how much it fluctuates)
-- Explore and visualize data using charts and graphs
-- Build statistical models to forecast future values
-- Explain what the analysis tells us about the data and what it means in practice
-- Communicate your research findings in a written report
-
-# Project Requirements
-
-## About Quarto Documents
-
-This assessment requires you to submit your work as a Quarto document (`.qmd` file). Quarto is a modern publishing system that allows you to:
-
-- Write text and code in the same document
-- Generate high-quality PDF and HTML outputs
-- Include interactive visualizations and tables
-- Show or hide code as needed
-
-Your Quarto document should include:
-- All your analysis code in clearly labeled code chunks
-- Your written report with integrated figures and tables
-- References and citations
-
-You do not need to submit separate R scripts if all your code is included in the Quarto document. The code chunks in your document should be well-organized and commented.
-
-## Glossary of Key Terms
-
-[Previous glossary section remains the same]
-
-## Data Sources
-
-The `tsfe` R package provides several datasets (daily frequency from 2010-2024) that you can choose from:
-
-[Previous data sources section with added date range]
-
-## Research Questions and Report Structure
-
-Your report should investigate three related research questions (one from each section below) that form a coherent analysis. For example, you might examine market volatility through increasingly sophisticated lenses: first exploring its basic properties, then modeling it, and finally conducting advanced analysis.
-
-### Section 1: Exploratory Analysis (24 marks - approximately 750 words)
-
-[Previous questions remain the same]
-
-### Section 2: Time Series Modeling (32 marks - approximately 1000 words)
-
-[Previous questions remain the same]
-
-### Section 3: Advanced Analysis (24 marks - approximately 750 words)
-
-[Previous questions remain the same]
-
-## Report Organization (80% of total mark)
-
-Your report should be structured as follows, integrating your three chosen research questions into a coherent narrative:
-
-1. **Introduction (8 marks, ~300 words):**
-   - Background covering all three research questions
-   - How your chosen questions connect/complement each other
-   - Overall research objectives
-   - Brief literature review
-
-2. **Data and Methods (16 marks, ~750 words):**
-   - Description of your chosen dataset(s)
-   - Data cleaning and preparation steps
-   - Methods for:
-     * Section 1 (Exploratory Analysis)
-     * Section 2 (Time Series Modeling)
-     * Section 3 (Advanced Analysis)
-
-3. **Results (40 marks, ~1500 words):**
-   - Section 1 findings (12 marks)
-   - Section 2 findings (16 marks)
-   - Section 3 findings (12 marks)
-   Each section should include:
-   - Clear presentation of results with appropriate visualizations
-   - Statistical interpretation
-   - Model diagnostics where applicable
-
-4. **Discussion (12 marks, ~450 words):**
-   - Integration of findings from all three sections
-   - Practical implications
-   - Limitations and future research
-   - Concluding remarks
-
-5. **Technical Implementation (4 marks):**
-   - Code quality and organization
-   - Appropriate use of Quarto features
-   - Documentation and reproducibility
-
-Total word limit: 3000 words (excluding code, figures, tables, and references)
+Each step builds on the previous one, creating a logical progression from data selection to final submission.
 
 ## Video Presentation (20% of total mark)
 
@@ -340,12 +271,12 @@ Create a 5-minute video that:
    - Main takeaways
    - Practical implications
 
-Technical Requirements:
+- **Technical Requirements:**
+
 - MP4 format
 - Clear audio
-- Screen sharing of key visualizations
-- Optional: webcam footage of presenter
-
+- Screen sharing of key visualizations 
+- Webcam footage of presenter
 
 # Assessment Criteria
 
@@ -455,17 +386,55 @@ Technical Requirements:
 # Submission Requirements
 
 Submit through Canvas:
+
 1. `surname_firstname_report.qmd` (Quarto source file)
 2. `surname_firstname_report.html` (HTML output)
 3. `surname_firstname_presentation.mp4` (Video presentation)
 
 You do not need to submit separate R scripts if all your code is in your Quarto document.
 
-[Previous submission guidelines, academic integrity, and AI policy sections remain the same]
+# Academic Integrity
+
+## Plagiarism Policy
+
+All work must be your own. Make sure to reference all your sources properly using the APA 7th edition format. The university's academic integrity policy applies to everything you submit.
+
+## Code Attribution
+
+If you adapt any code from external sources (like websites or textbooks), clearly comment on it in your code and provide the appropriate citations.
+
+## AI Policy
+
+I expect you to use generative AI in this class. Some assignments will require it. Learning to use AI is an emerging skill, and I provide some tutorials in Canvas about how to use it. I am happy to meet and help with these tools during my coding clinics or after class.
+
+**Responsible AI Use:**
+
+* **Effort Matters:**  The quality of your AI-generated output depends on the effort you put into crafting your prompts. Generic or low-effort prompts will likely result in low-quality outputs. Take the time to refine your prompts to achieve meaningful results.
+
+* **Verification is Essential:**  Don't blindly trust the information provided by AI tools. Always double-check facts and figures, especially those you are unfamiliar with. You are responsible for any errors or omissions in the AI-generated content you use.
+
+* **Acknowledge AI Assistance:**  Transparency is key. When you use AI tools in your work, include a paragraph at the end of your assignment explaining:
+    * Which AI tools you used (e.g., ChatGPT, Bard).
+    * How you used them (e.g., generating code, summarizing research, brainstorming ideas).
+    * The prompts you used to obtain the results.
+
+    Failure to acknowledge AI assistance is considered a violation of academic integrity policies.
+
+* **Use AI Judiciously:**  AI is a powerful tool, but it's not always the right tool for every task.  Think critically about when AI is appropriate and helpful for your analysis. Avoid over-reliance on AI, and ensure that your own understanding and insights are central to your work.  See this [article](https://www.hoganlovells.com/en/publications/new-cnils-guidelines-on-ai-models-a-practical-approach-amidst-eus-regulatory-tangles) for how to be judicious.
+
+**Module Coordinator's Expertise:**
+
+Please be aware that the module coordinator has extensive research expertise in the use of Large Language Models (LLMs) and generative AI. This means they are well-equipped to identify instances of inappropriate or unacknowledged AI use in student work.
+
+**Consequences of Academic Misconduct:**
+
+Any violation of the university's academic integrity policies, including plagiarism, improper code attribution, or failure to acknowledge AI assistance, will be subject to investigation and may result in serious penalties.
+
 
 ## Word Count Guidelines
 
 The 3000-word limit excludes:
+
 - Code chunks and outputs
 - Figures and tables
 - Figure/table captions
@@ -474,12 +443,13 @@ The 3000-word limit excludes:
 - YAML header
 
 The word count includes:
+
 - All main body text
 - Section headings
 - In-text citations
 - Footnotes
 
-## FAQ
+# FAQ
 
 **Q: Do my three research questions need to use the same dataset?**
 A: No, but they should form a coherent narrative. If using different datasets, explain the connection.
@@ -489,6 +459,20 @@ A: Include an appendix section titled "AI Usage" detailing which tools you used 
 
 **Q: Can I use data sources not in the tsfe package?**
 A: Yes, but discuss with the module coordinator first.
+
+# Project Timeline
+
+To help you manage this project effectively within the 4-5 week timeframe, consider the following suggested schedule:
+
+| Timeframe | Milestone |
+|---|---|
+| Week 1 | • Select your datasets<br>• Choose your three research questions<br>• Complete initial data exploration<br>• Begin Section 1 analysis (Exploratory Analysis) |
+| Week 2 | • Complete Section 1 analysis<br>• Begin Section 2 analysis (Time Series Modeling)<br>• Plan your approach for Section 3 |
+| Week 3 | • Complete Section 2 analysis<br>• Conduct Section 3 analysis (Advanced Analysis)<br>• Start drafting the written report |
+| Week 4 | • Finalize all analyses<br>• Complete written report draft<br>• Create visualizations<br>• Prepare video presentation |
+| Week 5 (if available) | • Review and refine all deliverables<br>• Get feedback if possible<br>• Submit completed project |
+
+This compressed timeline requires careful planning and consistent work. Focus on completing one section per week, with some overlap as needed. If you only have 4 weeks, compress the last two weeks' activities into your final week.
 
 # Deadlines
 
