@@ -1,0 +1,253 @@
+---
+title: "Financial Data Analytics Project"
+author: "[Your Name]"
+date: today
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    toc: true
+    toc-depth: 3
+    number-sections: true
+bibliography: references.bib
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r setup}
+#| label: load-packages
+#| include: false
+
+# Load required packages
+library(tsfe)
+library(tidyverse)
+library(tidyquant)
+library(fpp2)
+library(forecast)
+library(rugarch)
+library(vars)
+
+# Set default theme for ggplot2
+theme_set(theme_minimal())
+```
+
+# Introduction
+
+## Research Questions
+
+[State your three research questions here - one from each section of the assignment]
+
+1. Exploratory Analysis Question: [Your question here]
+2. Time Series Modeling Question: [Your question here]
+3. Advanced Analysis Question: [Your question here]
+
+## Background
+
+[Provide background information relevant to your research questions]
+
+## Literature Review
+
+[Brief review of relevant literature - remember to cite sources using @citation-key]
+
+# Data and Methods
+
+## Data Description
+
+```{r load-data}
+#| label: data-loading
+
+# Example: Loading Russell 2000 data
+data("indice")
+russell <- indice$russell2000
+
+# Convert to time series object if needed
+russell_ts <- ts(russell, frequency = 252)  # 252 trading days per year
+
+# Display first few rows
+head(russell)
+```
+
+## Data Preparation
+
+```{r data-prep}
+#| label: data-preparation
+
+# Calculate returns
+russell_returns <- diff(log(russell)) * 100
+
+# Basic summary statistics
+summary(russell_returns)
+```
+
+## Methodology
+
+### Exploratory Analysis Methods
+
+[Describe methods for your exploratory analysis]
+
+```{r exploratory}
+#| label: exploratory-analysis
+
+# Example: Create time series plot
+ggplot(data = data.frame(Date = index(russell), Price = coredata(russell))) +
+  geom_line(aes(x = Date, y = Price)) +
+  labs(title = "Russell 2000 Index Over Time",
+       x = "Date",
+       y = "Price") +
+  theme_minimal()
+
+# Example: QQ plot for returns
+qqnorm(russell_returns)
+qqline(russell_returns)
+```
+
+### Time Series Modeling Methods
+
+[Describe your modeling approach]
+
+```{r modeling}
+#| label: time-series-modeling
+
+# Example: Fit ARIMA model
+fit_arima <- auto.arima(russell_returns)
+summary(fit_arima)
+
+# Example: Model diagnostics
+checkresiduals(fit_arima)
+```
+
+### Advanced Analysis Methods
+
+[Describe your advanced analysis methods]
+
+```{r advanced}
+#| label: advanced-analysis
+
+# Example: GARCH modeling
+spec <- ugarchspec(variance.model = list(model = "sGARCH"),
+                  mean.model = list(armaOrder = c(1,1)))
+fit_garch <- ugarchfit(spec, russell_returns)
+show(fit_garch)
+```
+
+# Results
+
+## Exploratory Analysis Results
+
+[Present and interpret your exploratory analysis findings]
+
+```{r exploratory-results}
+#| label: exploratory-results
+
+# Add your exploratory analysis results and visualizations here
+```
+
+## Time Series Modeling Results
+
+[Present and interpret your modeling results]
+
+```{r modeling-results}
+#| label: modeling-results
+
+# Add your modeling results here
+```
+
+## Advanced Analysis Results
+
+[Present and interpret your advanced analysis results]
+
+```{r advanced-results}
+#| label: advanced-results
+
+# Add your advanced analysis results here
+```
+
+# Discussion
+
+## Integration of Findings
+
+[Discuss how the findings from your three analyses connect and complement each other]
+
+## Practical Implications
+
+[Discuss the practical implications of your findings]
+
+## Limitations
+
+[Discuss limitations of your analysis]
+
+## Future Research
+
+[Suggest directions for future research]
+
+# References {.unnumbered}
+
+::: {#refs}
+:::
+
+# Appendix {.unnumbered}
+
+## AI Usage Statement
+
+[Describe any AI tools used in this analysis and how they were used]
+
+## Additional Analyses
+
+[Any additional analyses or robustness checks]
+
+```{r appendix}
+#| label: appendix-analyses
+
+# Additional analyses can go here
+```
+
+## References Explained
+
+### Section 1: Exploratory Analysis
+
+- Q1 (Stock market behavior): Cont (2001) on empirical properties of returns
+- Q2 (Earnings patterns): Foster (1984) on quarterly earnings analysis
+- Q3 (Exchange rate volatility): Andersen et al. (2001) on volatility distributions
+
+Section 2: Time Series Modeling
+
+- Q1 (ARIMA prediction): Box et al. (2015) on time series analysis
+- Q2 (Smoothing techniques): Cleveland et al. (1990) on decomposition
+- Q3 (GARCH modeling): Bollerslev (1986) on GARCH models
+
+Section 3: Advanced Analysis
+
+- Q1 (Market connections): Forbes & Rigobon (2002) on market interdependence
+- Q2 (Machine learning): Gu et al. (2020) on ML in finance
+- Q3 (VAR models): Sims (1980) on VAR analysis
+
+
+# References
+
+Section 1: Exploratory Analysis References
+1.	Cont, R. (2001). “Empirical properties of asset returns: stylized facts and statistical issues.” Quantitative Finance, 1, 223–236.
+•	URL: https://www.tandfonline.com/doi/abs/10.1080/713665670
+2.	Foster, G. (1984). “Quarterly accounting data: Time-series properties and predictive-ability results.” Accounting Review, 59(1), 1–21.
+•	URL: https://www.jstor.org/stable/246028
+3.	Andersen, T. G., Bollerslev, T., Diebold, F. X., & Labys, P. (2001). “The distribution of realized exchange rate volatility.” Journal of the American Statistical Association, 96(453), 42–55.
+•	URL: https://www.tandfonline.com/doi/abs/10.1198/016214501750332965
+
+Section 2: Time Series Modeling References
+
+4.	Box, G. E. P., Jenkins, G. M., Reinsel, G. C., & Ljung, G. M. (2015). “Time series analysis: forecasting and control.” Journal of Business & Economic Statistics.
+•	URL: https://www.wiley.com/en-se/Time+Series+Analysis%3A+Forecasting+and+Control%2C+5th+Edition-p-9781118675021
+5.	Cleveland, R. B., Cleveland, W. S., McRae, J. E., & Terpenning, I. (1990). “STL: A seasonal-trend decomposition procedure based on loess.” Journal of Official Statistics, 6(1), 3–73.
+•	URL: https://www.wessa.net/download/stl.pdf
+6.	Bollerslev, T. (1986). “Generalized autoregressive conditional heteroskedasticity.” Journal of Econometrics, 31(3), 307–327.
+•	URL: https://public.econ.duke.edu/~boller/Published_Papers/joe_86.pdf
+
+Section 3: Advanced Analysis References
+
+7.	Forbes, K. J., & Rigobon, R. (2002). “No contagion, only interdependence: measuring stock market comovements.” The Journal of Finance, 57(5), 2223–2261.
+•	URL: https://onlinelibrary.wiley.com/doi/abs/10.1111/0022-1082.00494
+8.	Gu, S., Kelly, B., & Xiu, D. (2020). “Empirical asset pricing via machine learning.” The Review of Financial Studies, 33(5), 2223–2273.
+•	URL: https://academic.oup.com/rfs/article/33/5/2223/5542000
+9.	Sims, C. A. (1980). “Macroeconomics and reality.” Econometrica, 48(1), 1–48.
+•	URL: https://www.jstor.org/stable/1912017

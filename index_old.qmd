@@ -1,6 +1,7 @@
 ---
 title: "Advanced Financial Data Analytics"
 subtitle: "Coursework Assessment 2024/25"
+embed-resources: true
 format:
   html:
     toc: true
@@ -15,12 +16,6 @@ format:
       - margin=1in
     fontsize: 11pt
 ---
-
-# Module Information
-
-## Overview
-
-This module assessment helps you understand and apply different ways to analyze financial data that changes over time (like stock prices or exchange rates). You'll start with simple techniques to explore and visualize the data, then move on to more advanced methods to build models and make forecasts. Even if you're not a math whiz, this module focuses on helping you understand what the results mean and how they can be used in finance.
 
 ## Learning Outcomes
 
@@ -135,6 +130,8 @@ Choose **one** of the following questions and use more advanced techniques to an
 
 ### Section 1: Exploratory Analysis
 
+**The requirements depend on the topic you choose:**
+
 1.  **Data Properties and Visualization:**
     -   Create graphs showing how the data changes over time, with labels and explanations.
     -   Use tools like ACF and PACF to analyze how data points are related at different times.
@@ -148,6 +145,8 @@ Choose **one** of the following questions and use more advanced techniques to an
     -   Measure the relationship between different variables.
 
 ### Section 2: Time Series Modeling
+
+**The requirements depend on the topic you choose:**
 
 1.  **Basic Time Series Models:**
     -   Choose the right type of ARIMA model.
@@ -163,7 +162,7 @@ Choose **one** of the following questions and use more advanced techniques to an
 
 ### Section 3: Advanced Analysis
 
-The requirements depend on the topic you choose:
+**The requirements depend on the topic you choose:**
 
 1.  **Multivariate Analysis:**
     -   Define the relationships between multiple variables.
@@ -179,33 +178,29 @@ The requirements depend on the topic you choose:
 
 ## Deliverables
 
-### Written Report (70% of total mark)
+### Report (80%) Organization Guidelines
 
-You need to submit a professional research report (maximum 3000 words) with these sections:
+Your report should integrate your three chosen research questions (one from each section) as follows:
 
-1.  **Introduction (10 marks):**
-    -   Give background information on the topic.
-    -   Clearly state what you want to achieve with your research.
-    -   Summarize previous research on the topic.
-    -   Briefly describe the methods you'll use.
+1. Introduction (15 marks, ~500 words):
+   - Background for all three research questions
+   - How they connect/complement each other
+   - Overall research objectives
 
-2.  **Data and Methods (20 marks):**
-    -   Describe the data you'll use in detail.
-    -   Explain any steps you take to clean or prepare the data.
-    -   Justify why you chose the methods you used.
-    -   Describe how you implemented the methods.
+2. Data and Methods (25 marks, ~750 words):
+   - Section 1 methods: [Exploratory Analysis]
+   - Section 2 methods: [Time Series Modeling]
+   - Section 3 methods: [Advanced Analysis]
 
-3.  **Results (25 marks):**
-    -   Present your results clearly using tables and figures.
-    -   Explain what the statistical results mean in simple terms.
-    -   Check if the models meet the necessary assumptions.
-    -   Compare the performance of different models or methods.
+3. Results (25 marks, ~1000 words):
+   - Section 1 findings: [Exploratory Analysis]
+   - Section 2 findings: [Time Series Modeling]
+   - Section 3 findings: [Advanced Analysis]
 
-4.  **Discussion (15 marks):**
-    -   Summarize the key findings of your analysis.
-    -   Discuss any limitations of your data or methods.
-    -   Explain how your findings can be used in real-world situations.
-    -   Suggest areas for further research.
+4. Discussion (15 marks, ~750 words):
+   - Integrated discussion of all findings
+   - Connections between the three analyses
+   - Overall implications and conclusions
 
 ### Code Submission (20% of total mark)
 
