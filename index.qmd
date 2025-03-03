@@ -75,7 +75,31 @@ This project must be completed on Posit Cloud (formerly RStudio Cloud), similar 
 
 Using Posit Cloud ensures consistency in your computing environment and makes it easier for you to focus on the analysis rather than setting up the technical infrastructure. It also ensures that your project will be reproducible when evaluated.
 
-Instructions for accessing the project template and environment will be provided separately.
+### Accessing the Project Template
+
+To access and use the project template:
+
+1. **Log in to Posit Cloud**: Navigate to [posit.cloud](https://posit.cloud/) and sign in with your QUB account credentials.
+
+2. **Access the Course Workspace**: Select our course workspace from your workspace list.
+
+3. **Create a New Project from Template**: 
+   - Click the "New Project" button
+   - Select "New Project from Template" 
+   - Look for the "Advanced Financial Data Analytics Project Template" under "Your Content" or "Templates"
+   - Click on the template to create your new project
+
+4. **Rename Your Project**: Right after creation, rename your project to "Surname_Firstname_Financial_Analytics_Project" for easy identification.
+
+5. **Explore the Template**: The template includes:
+   - A pre-configured Quarto document with all required sections
+   - Example code for data loading and basic analyses
+   - Pre-installed packages required for the analyses
+   - Access to datasets in the `tsfe` package
+
+6. **Save Your Work Regularly**: Posit Cloud automatically saves your work, but it's good practice to manually save important changes.
+
+If you encounter any issues accessing the template, please contact the module coordinator immediately.
 
 ## Glossary of Key Terms
 
